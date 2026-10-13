@@ -14,7 +14,9 @@ tccutil reset Accessibility com.local.codecontroller && pkill -x CodeController 
 
 **IMPORTANT:** Always reset Accessibility permissions before deploying. The app's hash changes on every rebuild, so macOS invalidates the old permission grant. Without the reset, the app launches but silently fails to send input events.
 
-No test suite — testing is manual with a connected controller.
+Packaging regressions: `python3 -B -m unittest discover -s tests -v`. These use a
+stub compiler in temporary directories; app testing remains manual with a
+connected controller on macOS.
 
 ## Architecture
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Do not package stale output or report success after a failed build step.
+set -euo pipefail
+
 # Compile Swift to executable
 swiftc CodeController.swift -o CodeController
 

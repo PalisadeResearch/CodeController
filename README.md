@@ -39,6 +39,14 @@ Requires Swift toolchain (Xcode or Command Line Tools).
 3. Launch: `open /Applications/CodeController.app`
 4. Grant **Accessibility** permission when prompted (or manually in System Settings > Privacy & Security > Accessibility)
 
+### Testing the Build Script
+
+Run `python3 -B -m unittest discover -s tests -v` to check packaging success and
+failure handling. These tests require Python 3 and Bash, use a stub Swift compiler
+in temporary directories, and never launch the app or request Accessibility
+permissions. They do not validate Swift compilation or controller behavior;
+those checks require macOS and a connected controller.
+
 ### SuperWhisper (Voice Input)
 
 [SuperWhisper](https://superwhisper.com) is a macOS voice-to-text app. Bind controller buttons to SuperWhisper for hands-free dictation:
